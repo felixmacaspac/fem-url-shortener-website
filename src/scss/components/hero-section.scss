@@ -1,0 +1,19 @@
+@use '../utilities/breakpoints.scss' as *;
+
+.banner {
+
+  &-image {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &-image > img {
+    width: 450px;
+    height: 100%;
+
+    @include breakpoint(small) {
+      width: 100%;
+    }
+  }
+}
