@@ -1,0 +1,34 @@
+.shorten {
+  position: absolute;
+  width: 100%;
+  transform: translateY(-90px);
+
+  &__container {
+    background: url("../../../images/mobile/bg-shorten-mobile.svg") right 0, var(--dark-violet);
+    background-repeat: no-repeat;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  &__form > input {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: .875rem 1rem;
+    margin-bottom: 1rem;
+    font-size: var(--default-font-size);
+  }
+
+  &__btn {
+    background-color: var(--cyan);
+    padding: .875rem 0;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__btn > button {
+    font-weight: 900;
+    color: var(--white);
+  }
+}
