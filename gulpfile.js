@@ -7,6 +7,13 @@ const cssnano = require("cssnano");
 const babel = require("gulp-babel");
 const terser = require("gulp-terser");
 const browsersync = require("browser-sync").create();
+const beautify = require("gulp-jsbeautifier");
+
+function beautifyCompiled() {
+  return src(["./dist/*.css", "./dist/*.js"])
+    .pipe(beautify())
+    .pipe(dest("./dist"));
+}
 
 // Sass Task
 function scssTask() {
@@ -54,4 +61,10 @@ function watchTask() {
 }
 
 // Default Gulp Task
-exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(
+  scssTask,
+  jsTask,
+  beautifyCompiled,
+  browserSyncServe,
+  watchTask
+);
