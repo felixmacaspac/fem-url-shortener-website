@@ -1,0 +1,32 @@
+.cta {
+  
+  &__wrapper {
+    background: url("../../../images/mobile/bg-boost-mobile.svg"), var(--dark-violet);
+    background-repeat: no-repeat;
+    padding: 5rem 0;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__title > h2 {
+    font-size: clamp(28px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__button > button {
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--cyan);
+    padding: .875rem 2.25rem;
+  }
+}

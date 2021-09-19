@@ -1,0 +1,43 @@
+.footer {
+  
+  &__wrapper {
+    background-color: var(--vary-dark-violet);
+    padding: 3.5rem 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    margin-bottom: 2rem;
+  }
+
+  &__nav {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  &__heading > h4 {
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  &__unordered {
+    margin-bottom: 2rem;
+    color: var(--grayish-violet);
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    margin-top: 1rem;
+  }
+}
