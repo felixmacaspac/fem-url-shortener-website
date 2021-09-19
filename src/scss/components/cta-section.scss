@@ -1,9 +1,11 @@
 .cta {
   
   &__wrapper {
-    background: url("../../../images/mobile/bg-boost-mobile.svg"), var(--dark-violet);
+    background: url("../images/mobile/bg-boost-mobile.svg"), var(--dark-violet);
     background-repeat: no-repeat;
     padding: 5rem 0;
+    background-size: cover;
+    background-position: right;
   }
 
   &__title {
