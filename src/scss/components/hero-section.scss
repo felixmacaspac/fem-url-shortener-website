@@ -41,7 +41,7 @@
   &__content {
     text-align: center;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       text-align: left;
     }
   }
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
 
-    @include breakpoint(small) {
+    @include breakpoint(medium) {
       justify-content: start;
     }
     

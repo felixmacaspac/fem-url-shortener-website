@@ -27,7 +27,7 @@
   }
 
   &__form > input {
-    width: 78%;
+    width: 100%;
     border-radius: 10px;
     background-color: var(--white);
     padding: .875rem 1rem;
@@ -35,6 +35,7 @@
     font-size: var(--default-font-size);
 
     @include breakpoint(medium) {
+      width: 78%;
       padding: 1.5rem 1rem;
       margin-bottom: 0;
     }
