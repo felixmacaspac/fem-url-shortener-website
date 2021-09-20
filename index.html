@@ -31,11 +31,15 @@
           <div class="header__nav" id="nav-container">
             <nav class="header__nav-menu">
               <ul class="header__nav-unordered">
-                <li class="header__nav-list"><a href="#about" class="header__nav-anchor">Features</a></li>
-                <li class="header__nav-list"><a href="#services" class="header__nav-anchor">Pricing</a></li>
-                <li class="header__nav-list"><a href="#projects" class="header__nav-anchor">Resources</a></li>
-                <li class="header__nav-list"><a href="#contact" class="header__nav-anchor">Login</a></li>
-                <li class="header__nav-list"><a href="#contact" class="header__nav-anchor">Sign Up</a></li>
+                <div class="header__nav-section">
+                  <li class="header__nav-list"><a href="#about" class="header__nav-anchor">Features</a></li>
+                  <li class="header__nav-list"><a href="#services" class="header__nav-anchor">Pricing</a></li>
+                  <li class="header__nav-list"><a href="#projects" class="header__nav-anchor">Resources</a></li>
+                </div>
+                <div class="header__nav-register">
+                  <li class="header__nav-list"><a href="#contact" class="header__nav-anchor">Login</a></li>
+                  <li class="header__nav-list"><a href="#contact" class="header__nav-anchor">Sign Up</a></li>
+                </div>
               </ul>
             </nav>
           </div>
@@ -50,25 +54,26 @@
     <section class="banner">
       <div class="banner__wrapper">
         <div class="container">
-          <div class="banner__content">
+          <div class="banner__container">
             <div class="banner__image">
-              <img src="/images/illustration-working.svg" alt="">
+              <img src="./images/illustration-working.svg" alt="">
             </div>
-            <div class="banner__title">
-              <h1>More than just shorter links</h1>
-            </div>
-            <div class="banner__paragraph">
-              <p>Build your brand’s recognition and get detailed insights 
-                on how your links are performing.</p>
-            </div>
-            <div class="banner__cta">
-              <button>Get Started</button>
+            <div class="banner__content">
+              <div class="banner__title">
+                <h1>More than just shorter links</h1>
+              </div>
+              <div class="banner__paragraph">
+                <p>Build your brand’s recognition and get detailed insights 
+                  on how your links are performing.</p>
+              </div>
+              <div class="banner__cta">
+                <button>Get Started</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- shorten link section  -->
     <section class="shorten">
       <div class="shorten__wrapper">
@@ -84,7 +89,6 @@
         </div>
       </div>
     </section>
-
     <!-- stats section -->
     <section class="card">
       <div class="card__wrapper">
@@ -127,7 +131,6 @@
         </div>
       </div>
     </section>
-
     <!-- CTA section -->
     <section class="cta">
       <div class="cta__wrapper">

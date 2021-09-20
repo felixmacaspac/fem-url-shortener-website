@@ -1,3 +1,5 @@
+@use '../utilities/breakpoints.scss' as *;
+
 .shorten {
   position: absolute;
   width: 100%;
@@ -8,15 +10,34 @@
     background-repeat: no-repeat;
     padding: 1.5rem;
     border-radius: 10px;
+
+    @include breakpoint(medium) {
+      background: url("../images/desktop/bg-shorten-desktop.svg") right 0, var(--dark-violet);
+      background-size: cover;
+    }
+  }
+
+  &__form {
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
   }
 
   &__form > input {
-    width: 100%;
+    width: 78%;
     border-radius: 10px;
     background-color: var(--white);
     padding: .875rem 1rem;
     margin-bottom: 1rem;
     font-size: var(--default-font-size);
+
+    @include breakpoint(medium) {
+      padding: 1.5rem 1rem;
+      margin-bottom: 0;
+    }
   }
 
   &__btn {
@@ -25,6 +46,11 @@
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+
+    @include breakpoint(medium) {
+      padding: 1.5rem 0;
+      width: 20%;
+    }
   }
 
   &__btn > button {
