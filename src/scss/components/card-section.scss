@@ -1,8 +1,9 @@
+@use '../utilities/breakpoints.scss' as *;
+
 .card {
 
   &__wrapper {
-    padding-top: 10rem;
-    padding-bottom: 1rem;
+    padding: 10rem 0;
     background-color: var(--light-gray);
   }
 
@@ -12,7 +13,7 @@
   }
 
   &__title > h2 {
-    font-size: clamp(28px, 4vw, 56px);
+    font-size: clamp(28px, 4vw, 38px);
     font-weight: 900;
     color: var(--very-dark-blue);
     letter-spacing: -1px;
@@ -30,6 +31,19 @@
     color: var(--grayish-violet);
   }
 
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(medium) {
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: baseline;
+    }
+  }
+
   &__item {
     background-color: var(--white);
     margin-bottom: 5rem;
@@ -40,7 +54,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+
+    @include breakpoint(medium) {
+      padding: 2rem;
+      width: 32%;
+      text-align: left;
+      align-items: baseline;
+    }
 
     &-icon {
       width: 50px;
@@ -61,7 +81,7 @@
     }
 
     &-title {
-      font-size: clamp(22px, 4vw, 56px);
+      font-size: clamp(16px, 2vw, 28px);
       font-weight: 900;
       color: var(--very-dark-blue);
       margin-bottom: 1rem;
@@ -75,8 +95,19 @@
     }
   }
 
+  &__item:nth-child(2) {
+
+    @include breakpoint(medium) {
+      transform: translateY(50px);
+    }
+  }
+
   &__item:last-child {
     margin-bottom: 3.5rem;
+
+    @include breakpoint(medium) {
+      transform: translateY(100px);
+    }
   }
 
   &__item::after {
@@ -86,6 +117,13 @@
     height: 80px;
     position: absolute;
     bottom: -80px;
+
+    @include breakpoint(medium) {
+      right: -80px;
+      width: 80px;
+      height: 8px;
+      top: 50%;
+    }
   }
 
   &__item:last-child::after {
