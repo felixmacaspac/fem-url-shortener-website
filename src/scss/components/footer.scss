@@ -1,3 +1,5 @@
+@use '../utilities/breakpoints.scss' as *;
+
 .footer {
   
   &__wrapper {
@@ -11,6 +13,21 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    &.--second {
+      @include breakpoint(medium) {
+        max-width: 750px;
+        width: 100%;
+      }
+    }
   }
 
   &__logo {
@@ -20,6 +37,17 @@
   &__nav {
     font-size: 16px;
     line-height: 2;
+
+    @include breakpoint(medium) {
+      width: 65%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 2rem;
+    }
+
+    @include breakpoint(large) {
+      margin: 0;
+    }
   }
 
   &__heading > h4 {
@@ -39,5 +67,9 @@
     justify-content: space-between;
     width: 180px;
     margin-top: 1rem;
+
+    @include breakpoint(medium) {
+      margin-top: 0;
+    }
   }
 }

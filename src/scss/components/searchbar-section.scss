@@ -1,9 +1,12 @@
 @use '../utilities/breakpoints.scss' as *;
 
 .shorten {
-  position: absolute;
+  position: relative;
   width: 100%;
-  transform: translateY(-90px);
+
+  &__wrapper {
+    background: linear-gradient(360deg, var(--light-gray) 57%, var(--white) 50%);
+  }
 
   &__container {
     background: url("../images/mobile/bg-shorten-mobile.svg") right 0, var(--dark-violet);
@@ -57,5 +60,43 @@
   &__btn > button {
     font-weight: 900;
     color: var(--white);
+  }
+}
+
+.copied {
+  background-color: var(--light-gray);
+  padding-top: 1rem;
+
+  &__content:first-child {
+    margin-top: 0;
+  }
+
+  &__content {
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--white);
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  &__link.--original {
+    color: var(--dark-violet);
+    border-bottom: 1px var(--light-gray) solid;
+    padding-bottom: 1rem;
+  }
+
+  &__link.--shorten {
+    color: var(--cyan);
+    padding: 1rem 0;
+  }
+
+  &__btn {
+    width: 100%;
+    color: var(--white);
+    background-color: var(--cyan);
+    padding: .750rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
   }
 }
