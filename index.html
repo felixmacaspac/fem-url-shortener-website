@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <!-- google font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <!-- css -->
-  <link rel="stylesheet" href="./dist/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
           <div class="header__item">
             <div class="header__item-image">
               <a href="/">
-                <img src="./images/header-logo.svg" alt="">
+                <img src="./assets/images/header-logo.svg" alt="">
               </a>
             </div>
             <button class="header__item-button" id="toggle-button">
@@ -56,7 +56,7 @@
         <div class="container">
           <div class="banner__container">
             <div class="banner__image">
-              <img src="./images/illustration-working.svg" alt="">
+              <img src="./assets/images/illustration-working.svg" alt="">
             </div>
             <div class="banner__content">
               <div class="banner__title">
@@ -79,31 +79,36 @@
       <div class="shorten__wrapper">
         <div class="container">
           <div class="shorten__container">
-            <form action="submit" class="shorten__form">
-              <input type="url" name="search-url" placeholder="Shorten a link here...">
+            <form id="shorten-form" class="shorten__form">
+              <input id="input-form" type="url" name="search-url" maxlength="1000" placeholder="Shorten a link here...">
               <div class="shorten__btn">
-                <button>Shorten it!</button>
-              </div> 
+                <button id="btn-form">Shorten it!</button>
+              </div>
             </form>
-          </div>
-        </div>
-      </div>
-      <div class="copied">
-        <div class="container">
-          <div class="copied__content">
-            <div class="copied__wrapper">
-              <div class="copied__link --original">
-                <p>https://www.frontendmentor.io/</p>
-              </div>
-              <div class="copied__link --shorten">
-                <p>https://bitly.com/</p>
-              </div>
-            </div>
-            <div class="copied__btn">
-              <button>Copy!</button>
+            <div class="shorten__error" id="shorten-error">
+              <span>Please add a link</span>
             </div> 
           </div>
         </div>
+      </div>
+      <div id="shorten-output">
+        <!-- <div class="copied">
+          <div class="container">
+            <div class="copied__content">
+              <div class="copied__wrapper">
+                <div class="copied__link --original">
+                  <p>https://www.frontendmentor.io/</p>
+                </div>
+                <div class="copied__link --shorten">
+                  <p>https://bitly.com/</p>
+                </div>
+              </div>
+              <div class="copied__btn">
+                <button>Copy!</button>
+              </div> 
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
     <!-- stats section -->
@@ -121,7 +126,7 @@
             <div class="card__content">
               <div class="card__item">
                 <div class="card__item-icon --wrapper">
-                  <img src="./images/icon-brand-recognition.svg" alt="" class="card__item-icon">
+                  <img src="./assets/images/icon-brand-recognition.svg" alt="" class="card__item-icon">
                 </div>
                 <h3 class="card__item-title">Brand Recognition</h3>
                 <p class="card__item-paragraph">Boost your brand recognition with each click. Generic links don’t 
@@ -130,7 +135,7 @@
     
               <div class="card__item">
                 <div class="card__item-icon --wrapper">
-                  <img src="./images/icon-detailed-records.svg" alt="" class="card__item-icon">
+                  <img src="./assets/images/icon-detailed-records.svg" alt="" class="card__item-icon">
                 </div>
                 <h3 class="card__item-title">Detailed Records</h3>
                 <p class="card__item-paragraph">Gain insights into who is clicking your links. Knowing when and where 
@@ -139,7 +144,7 @@
     
               <div class="card__item">
                 <div class="card__item-icon --wrapper">
-                  <img src="./images/icon-fully-customizable.svg" alt="" class="card__item-icon">
+                  <img src="./assets/images/icon-fully-customizable.svg" alt="" class="card__item-icon">
                 </div>
                 <h3 class="card__item-title">Fully Customizable</h3>
                 <p class="card__item-paragraph">Improve brand awareness and content discoverability through customizable 
@@ -173,7 +178,7 @@
       <div class="container">
         <div class="footer__content">
           <div class="footer__logo">
-            <img src="./images/footer-logo.svg" alt="">
+            <img src="./assets/images/footer-logo.svg" alt="">
           </div>
           <div class="footer__content --second">
             <nav class="footer__nav">
@@ -213,19 +218,19 @@
             </nav>
             <div class="footer__social">
               <a href="#">
-                <img src="./images/icon-facebook.svg" alt="">
+                <img src="./assets/images/icon-facebook.svg" alt="">
               </a>
   
               <a href="#">
-                <img src="./images/icon-twitter.svg" alt="">
+                <img src="./assets/images/icon-twitter.svg" alt="">
               </a>
   
               <a href="#">
-                <img src="./images/icon-pinterest.svg" alt="">
+                <img src="./assets/images/icon-pinterest.svg" alt="">
               </a>
   
               <a href="#">
-                <img src="./images/icon-instagram.svg" alt="">
+                <img src="./assets/images/icon-instagram.svg" alt="">
               </a>
             </div>
           </div>
@@ -236,35 +241,8 @@
 </body>
 
 <!-- javascript -->
-<script src="./dist/index.js"></script>
+<script src="./script/index.js"></script>
 </html>
-
-<!-- 
-
-
-
-Boost your links today
-
-Get Started
-
-Features
-
-Link Shortening
-Branded Links
-Analytics
-
-Resources
-
-Blog
-Developers
-Support
-
-Company
-
-About
-Our Team
-Careers
-Contact -->
 
 <!-- <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
