@@ -8,22 +8,64 @@ hamburger.addEventListener("click", (mobileMenu) => {
   navMenu.classList.toggle("is_active");
 });
 
-// shorten form
-// https://api.shrtco.de/v2/shorten?url=${url}
-
-// #.1 get all the HTML elements
+// JS selectors
 const shortenForm = document.getElementById("shorten-form");
 const btnForm = document.getElementById("btn-form");
-const inputForm = document.getElementById("input-form");
+const inputForm = document.querySelector(".shorten-form__input");
 const shortenOutput = document.getElementById("shorten-output");
 const errorMessage = document.querySelector(".shorten__error");
-const shortenApi = `https://api.shrtco.de/v2/shorten?url=${inputForm}`;
 
-// #.2 fetch the API
-async function callAPi() {
-  fetch(shortenApi)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+// array
+let linksArray = [];
+
+// event listeners
+
+shortenForm.addEventListener("click", shortenLink);
+
+function shortenLink(e) {
+  e.preventDefault();
+  let inputValue = inputForm.value;
+
+  if (inputValue === "") {
+    errorMessage.classList.add("is_null")
+    inputForm.classList.add("is_null")
+
+  } else {
+    errorMessage.classList.remove("is_null")
+    inputForm.classList.remove("is_null")
+
+      fetch(`https://api.shrtco.de/v2/shorten?url=${inputValue}`)
+      .then(response => response.json())
+      .then(data => {
+        
+          let linkObj = {
+              originalLink: data.result.original_link,
+              shortenedLink: data.result.full_short_link2
+          }
+        
+          linksArray.unshift(linkObj);
+          shortenOutput.innerHTML = '';
+
+          linksArray.forEach( inputForm => {
+              let linkHtmlString = `
+              <div class="copied">
+                <div class="container">
+                  <div class="copied__content">
+                    <div class="copied__wrapper">
+                      <div class="copied__link --original">
+                        <p>${inputForm.originalLink}</p>
+                      </div>
+                      <div class="copied__link --shorten">
+                        <p>${inputForm.shortenedLink}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          `;
+            shortenOutput.innerHTML += linkHtmlString;
+          })
+      })
+  }
+  inputForm.value = '';
 }
-callAPi();
-// #.3 work with the button and console log whenever you click it will fetch the API
